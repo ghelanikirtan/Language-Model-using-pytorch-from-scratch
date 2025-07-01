@@ -1,0 +1,38 @@
+model:
+  vocab_size: 30000 # approx. vocab size
+  d_model: 256 # Embedding Dimensions
+  n_layers: 4 # Number of Decoder Layers
+  n_heads: 4 # Number of Attention Heads
+  d_ff: 1024 # Feed-Forward Dimension
+  dropout: 0.1 # Dropout rate
+  max_len: 64 # Maximum sequence length
+
+training:
+  epochs: 10
+  batch_size: 96
+  learning_rate: 0.0001
+  warmup_steps: 4000 # Warmup steps for learning rate schedule.
+  beta1: 0.9 # Adam optimizer Beta-1
+  beta2: 0.98 # Adam optimizer Beta-2
+  epsilon: 1e-9 # Adam Optimizer epsilon
+  label_smoothing: 0.1 # Label Smoothing value
+  grad_clip: 0.1 # Gradient clipping value
+  log_file: "training.log"
+  checkpoint_dir: "checkpoints"
+
+validation:
+  batch_size: 96
+  eval_steps: 500 # Evaluate every N steps
+
+prediction:
+  max_gen_len: 50 # Maximum length of generated text
+  temperature: 1.0 # sampling temperature
+  top_k: 50 # Top-k sampling
+
+data:
+  dataset_name: "wikitext-2-raw-v1" # Hugging Face Dataset
+  max_seq_len: 64
+  vocab_file: "data/processed/vocab.pt" # Path to save vocabulary
+
+artifacts:
+  artifacts_dir: "artifacts"

@@ -1,0 +1,4 @@
+.venv/
+/output/artifacts/
+**/__pycache__
+**.py[cod]
