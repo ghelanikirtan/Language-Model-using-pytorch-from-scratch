@@ -13,6 +13,9 @@ A decoder-only Transformer (GPT-style) that learns to generate text token-by-tok
 - Positional Encoding
 - Feedforward Layers & LayerNorm
 
+**Flow Diagram [LM]:**
+![Language Model Flow Diagram](flow-diagram.png)
+
 **Next Steps**
 
 - Train on datasets like WikiText or OpenWebText
