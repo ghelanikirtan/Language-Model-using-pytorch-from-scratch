@@ -53,4 +53,8 @@ root/
 
 ---
 
+**Model After 20 Epochs worth training:**
+![image](https://github.com/user-attachments/assets/4e98297e-6418-4582-844e-ac19febe202b)
+
+
 ~ **_[Kirtan Ghelani 🔗](https://ghelanikirtan.vercel.app/)_**
