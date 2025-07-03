@@ -47,9 +47,9 @@ def validate_model(model:LanguageModel,
         
 if __name__ == "__main__":
     config = load_config("config.yaml")
-    device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     vocab = torch.load(config["data"]["vocab_file"])
-    model = LanguageModel(**config["model"]).to(device)
-    model.load_state_dict(torch.load("checkpoints/lm_checkpoint_epoch_10.pt"))
-    perplexity = validate_model(model, config, device)
+    checkpoint = torch.load("checkpoints/lm_checkpoint_epoch_19.pt")
+    model = LanguageModel(**config["model"]).to(DEVICE)
+    model.load_state_dict(checkpoint['model_state_dict'])
+    perplexity = validate_model(model, config)
     print(f"Validation Perplexity: {perplexity:.4f}")
